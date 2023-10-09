@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 
-df = pd.read_csv('https://raw.githubusercontent.com/davata1/ppw/main/DataPTAInformatikaLabel.csv',delimiter=';')
+df = pd.read_csv('https://raw.githubusercontent.com/davata1/ppw/main/DataPTAInformatikaLabel.csv', delimiter=';')
 df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
 df.head()
 
@@ -41,3 +41,4 @@ if data_teks:
     st.subheader("Topik Teratas untuk Setiap Dokumen:")
     for i, dokumen_topik in enumerate(topik_lda):
         st.write(f"Dokumen {i + 1}: Topik - {dokumen_topik[0] + 1}, {dokumen_topik[1] + 1}")
+
